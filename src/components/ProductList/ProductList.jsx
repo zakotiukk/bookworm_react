@@ -1,4 +1,4 @@
-import React from "react";
+import React, {UseState} from "react";
 import "./ProductList.css";
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from "../../hooks/useTelegram";
@@ -9,7 +9,7 @@ const products = [
     {id: '1', title: 'Everything I Know About Love', price: 480,  author: 'Dolly Alderton'},
     {id: '2', title: 'Solstice of Death', price: 820,  author:  'Laurence Anholt'},
     {id: '3', title: 'Dune', price: 600,  author:  'Frank Herbert'},
-    {id: '4', title: 'The Night They Vanished', price: 650,  author:  'Vanessa Savage'},
+    {id: '4', title: 'The Night They Vanished', price: 650,  author: 'Vanessa Savage'},
     {id: '5', title: '1984', price: 530,  author:  'George Orwell'},
     {id: '6', title: "Harry potter and the philosopher's stone", price: 340, author:  'J. K. Rowling'},
     {id: '7', title: 'Book of night', price: 490,  author:  ' Holly Black'},
@@ -35,6 +35,7 @@ const ProductList = () => {
         }
 
         setAddedItems(newItems)
+
         if(newItems.length ===0){
             tg.MainButton.hide();
         } else {
@@ -43,7 +44,6 @@ const ProductList = () => {
                 text: `Придбати ${getTotalPrice(newItems)}`
             })
         }
-
     }
 
     return (
