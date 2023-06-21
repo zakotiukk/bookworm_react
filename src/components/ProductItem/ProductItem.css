@@ -6,15 +6,6 @@
     width: 170px;
 }
 
-/*
-.img {
-    max-width: 100%;
-    background: lightgray;
-    max-height: 100px;
-    margin: 0 auto;
-    background: var(--tg-theme-button-color);
-} */
-
 .img {
     width: 100px;
     margin: 0 auto;
