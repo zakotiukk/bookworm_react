@@ -33,6 +33,7 @@
   }
   
   .btn.add {
+    align-self: flex-end;
     background-color: rgb(38, 121, 38);
     width: 150px;
     color: #fff;

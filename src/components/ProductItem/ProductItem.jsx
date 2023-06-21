@@ -53,9 +53,9 @@ function ProductItem  ({product, className,onAdd})  {
             <Link to={`/product/${product.id}`} state={{ product }}>
         <div className={'details-link'}>Детальніше</div>
       </Link>
-      <div className="btn-container">
+      
         <Button title={"Додати в корзину"} type={"add"} onClick={onAddHandler} />
-      </div>
+     
         </div>
     );
 };
