@@ -1,8 +1,8 @@
-import React, {UseState} from "react";
+import React, {useState} from "react";
 import "./ProductList.css";
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from "../../hooks/useTelegram";
-
+import {useCallback, useEffect} from "react";
 
 
 const products = [
@@ -14,6 +14,7 @@ const products = [
     {id: '6', title: "Harry potter and the philosopher's stone", price: 340, author:  'J. K. Rowling'},
     {id: '7', title: 'Book of night', price: 490,  author:  ' Holly Black'},
     {id: '8', title: 'The hound of the baskervilles', price: 150, author:  ' Arthur Conan Doyle'},
+    {id: '9', title: 'Beartown', price: 570, author:  'Fredrik Backman'},
 ]
 
 const getTotalPrice =(items = []) =>{
@@ -24,6 +25,24 @@ const getTotalPrice =(items = []) =>{
 const ProductList = () => {
     const [addedItems, setAddedItems]=useState([]);
     const {tg} =useTelegram();
+
+    const onSendData = useCallback(() => {
+        const data = {
+            products: addedItems,
+            totalPrice: getTotalPrice(addedItems),
+            queryId,
+        }
+        
+    }, [addedItems])
+
+
+    useEffect(() => {
+        tg.onEvent('mainButtonClicked', onSendData)
+        return () => {
+            tg.offEvent('mainButtonClicked', onSendData)
+        }
+    }, [onSendData])
+
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
