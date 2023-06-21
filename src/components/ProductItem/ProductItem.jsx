@@ -30,11 +30,11 @@ function ProductItem  ({product, className,onAdd})  {
         '1': img1,
         '2': img2,
         '3': img3,
-        '5': img4,
-        '4': img5,
-        '8': img6,
+        '4': img4,
+        '5': img5,
+        '6': img6,
         '7': img7,
-        '6': img8,
+        '8': img8,
         '9': img9,
       };
       //<Link to={`/product/${product.id}`} state={{ product }}>"{product.title}"</Link>
