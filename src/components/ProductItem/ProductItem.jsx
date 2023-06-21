@@ -10,14 +10,22 @@ import img6 from '../../img/6.jpg';
 import img7 from '../../img/7.jpg';
 import img8 from '../../img/8.jpg';
 import img9 from '../../img/9.jpg';
-
+import {useState} from 'react';
 import { Link, useLocation } from 'react-router-dom';
-const ProductItem = ({product, className, onAdd}) => {
-
-    const onAddHandler = () => {
+function ProductItem  ({product, className,onAdd})  {
+  //const [count, setCount] = useState(0);
+    
+  const onAddHandler = () => {
         onAdd(product);
     }
-
+    /*const handleIncrement = () => {
+      setCount(count + 1);
+      onAdd(product);
+    };
+    const handleDecrement = () => {
+      setCount(count - 1);
+      onRemove(product);
+    };*/
     const imageMap = {
         '1': img1,
         '2': img2,
@@ -45,9 +53,9 @@ const ProductItem = ({product, className, onAdd}) => {
             <Link to={`/product/${product.id}`} state={{ product }}>
         <div className={'details-link'}>Детальніше</div>
       </Link>
-            <Button className={'add-btn'} onClick={onAddHandler}>
-                Додати в корзину
-            </Button>
+      <div className="btn-container">
+        <Button title={"Додати в корзину"} type={"add"} onClick={onAddHandler} />
+      </div>
         </div>
     );
 };
