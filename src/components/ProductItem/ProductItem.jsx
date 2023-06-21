@@ -38,7 +38,7 @@ const ProductItem = ({product, className, onAdd}) => {
                 <img src={imgSrc} alt={product.title} />
             </div>
             <div className={'title'}>"{product.title}"</div>
-            <div className={'author'}>{product.author}</div>
+            <div className={'author'}>by {product.author}</div>
             <div className={'price'}>
                 <span>Вартість: <b>{product.price} ₴</b></span>
             </div>
