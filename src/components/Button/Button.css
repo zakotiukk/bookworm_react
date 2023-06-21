@@ -5,6 +5,10 @@
     border:none;
     outline:none;
     cursor: pointer;
+     padding: 0.6rem 0.8rem;
+
+      width: 120px;
+    margin-left: 10px;
 } */
 
 :root {
@@ -13,13 +17,12 @@
   
   .btn {
     padding: 0.6rem 0.8rem;
+    align-self: center;
     font-size: 1.2rem;
     text-align: center;
-    border: 0;
+    border: none;
     outline: none;
     border-radius: 10px;
-    width: 120px;
-    margin-left: 10px;
     box-shadow: 1px -3px 52px -5px rgba(0, 0, 0, 0.77);
     cursor: pointer;
   }
