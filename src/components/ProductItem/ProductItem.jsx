@@ -29,7 +29,7 @@ const ProductItem = ({product, className, onAdd}) => {
         '8': img8,
         '9': img9,
       };
-    
+      //<Link to={`/product/${product.id}`} state={{ product }}>"{product.title}"</Link>
       const imgSrc = imageMap[product.id];
       const location = useLocation();
     return (
@@ -37,11 +37,14 @@ const ProductItem = ({product, className, onAdd}) => {
             <div className={'img'}>
                 <img src={imgSrc} alt={product.title} />
             </div>
-            <div className={'title'}><Link to={`/product/${product.id}`} state={{ product }}>"{product.title}"</Link></div>
+            <div className={'title'}>"{product.title}"</div>
             <div className={'author'}>{product.author}</div>
             <div className={'price'}>
                 <span>Вартість: <b>{product.price} ₴</b></span>
             </div>
+            <Link to={`/product/${product.id}`} state={{ product }}>
+        <div className={'details-link'}>Детальніше</div>
+      </Link>
             <Button className={'add-btn'} onClick={onAddHandler}>
                 Додати в корзину
             </Button>

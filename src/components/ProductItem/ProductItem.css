@@ -1,6 +1,6 @@
 .product {
     display:flexbox;
-    flex-direction:column-reverse;
+    flex-direction:row;
     border: 1px solid var(--tg-theme-button-color);
     padding: 15px;
     width: 170px;
@@ -28,4 +28,8 @@
 
 .title {
     text-align: center;
+}
+
+.details-link{
+    text-align: right;
 }
