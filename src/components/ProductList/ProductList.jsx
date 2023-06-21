@@ -16,12 +16,12 @@ const products = [
     },
     {id: '2', title: 'Solstice of Death', price: 820,  author:  'Laurence Anholt'},
     {id: '3', title: 'Dune', price: 600,  author:  'Frank Herbert'},
-    {id: '4', title: 'The Night They Vanished', price: 650,  author: 'Vanessa Savage'},
-    {id: '5', title: '1984', price: 530,  author:  'George Orwell'},
-    {id: '6', title: "Harry potter and the philosopher's stone", price: 340, author:  'J. K. Rowling'},
+    {id: '4', title: '1984', price: 530,  author:  'George Orwell'},
+    {id: '5', title: 'The Night They Vanished', price: 650,  author: 'Vanessa Savage'},
+    {id: '6', title: 'The hound of the baskervilles', price: 150, author:  ' Arthur Conan Doyle'},
     {id: '7', title: 'Book of night', price: 490,  author:  ' Holly Black'},
-    {id: '8', title: 'The hound of the baskervilles', price: 150, author:  ' Arthur Conan Doyle'},
-    {id: '9', title: 'Beartown', price: 570, author:  'Fredrik Backman'},
+    {id: '8', title: 'Beartown', price: 570, author:  'Fredrik Backman'},
+    {id: '9', title: "Harry potter and the philosopher's stone", price: 340, author:  'J. K. Rowling'},
 ]
 
 const getTotalPrice =(items = []) =>{
