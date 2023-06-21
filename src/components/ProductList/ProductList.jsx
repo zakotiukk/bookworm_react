@@ -6,7 +6,14 @@ import {useCallback, useEffect} from "react";
 
 
 const products = [
-    {id: '1', title: 'Everything I Know About Love', price: 480,  author: 'Dolly Alderton'},
+    {id: '1', 
+    title: 'Everything I Know About Love', 
+    price: 480,  
+    author: 'Dolly Alderton',
+    description:'Award-winning journalist Dolly Alderton survived her twenties (just about) and in Everything I Know About Love, she gives an unflinching account of the bad dates and squalid flat-shares, the heartaches and humiliations, and most importantly, the unbreakable female friendships that helped her to hold it all together. Glittering with wit, heart and humour, this is a book to press into the hands of every woman who has ever been there or is about to find themselves taking that first step towards the rest of their lives.',
+    pages:368,
+    rating: 3,
+    },
     {id: '2', title: 'Solstice of Death', price: 820,  author:  'Laurence Anholt'},
     {id: '3', title: 'Dune', price: 600,  author:  'Frank Herbert'},
     {id: '4', title: 'The Night They Vanished', price: 650,  author: 'Vanessa Savage'},

@@ -10,6 +10,8 @@ import img6 from '../../img/6.jpg';
 import img7 from '../../img/7.jpg';
 import img8 from '../../img/8.jpg';
 import img9 from '../../img/9.jpg';
+
+import { Link, useLocation } from 'react-router-dom';
 const ProductItem = ({product, className, onAdd}) => {
 
     const onAddHandler = () => {
@@ -29,13 +31,13 @@ const ProductItem = ({product, className, onAdd}) => {
       };
     
       const imgSrc = imageMap[product.id];
-
+      const location = useLocation();
     return (
         <div className={'product ' + className}>
             <div className={'img'}>
                 <img src={imgSrc} alt={product.title} />
             </div>
-            <div className={'title'}>"{product.title}"</div>
+            <div className={'title'}><Link to={`/product/${product.id}`} state={{ product }}>"{product.title}"</Link></div>
             <div className={'author'}>{product.author}</div>
             <div className={'price'}>
                 <span>Вартість: <b>{product.price} ₴</b></span>

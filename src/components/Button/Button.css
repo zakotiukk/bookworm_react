@@ -1,15 +1,9 @@
 /*.button {
     padding: 10px, 15px;
-    background: var(--tg-theme-button-color);
+    background-color: rgb(38, 121, 38);
     color: var(--tg-theme-button-text-color);
     border:none;
     outline:none;
     cursor: pointer;
 } */
 
-.button {
-    width: 100%;
-    background-color: rgb(38, 121, 38);
-    color: #fff;
-    font-size: 14px;
-}
