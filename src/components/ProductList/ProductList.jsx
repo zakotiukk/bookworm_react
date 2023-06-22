@@ -51,7 +51,7 @@ const products = [
     {id: '9', title: 'Solstice of Death', price: 290,  author:  'Лоуренс Анхолт'},
 ]
 
-const getTotalPrice =(items = []) =>{
+/*const getTotalPrice =(items = []) =>{
     return items.reduce((acc,item) => {
         return acc+=item.price
     },0)
@@ -60,23 +60,14 @@ const ProductList = () => {
     const [addedItems, setAddedItems]=useState([]);
     const {tg} =useTelegram();
 
-   /* const onSendData = useCallback(() => {
+    const onSendData = useCallback(() => {
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
         
-    }, [addedItems])*/
-
-    const onSendData = useCallback(() => {
-        const data = {
-          products: addedItems,
-          totalPrice: getTotalPrice(addedItems),
-        };
-        tg.sendData(JSON.stringify(data));
-      }, [addedItems, tg]);
-    
+    }, [addedItems])
 
 
     useEffect(() => {
@@ -121,4 +112,61 @@ const ProductList = () => {
     );
 };
 
-export default ProductList;
+export default ProductList; */
+const ProductList = () => {
+    const [addedItems, setAddedItems] = useState([]);
+    const [orderedBooks, setOrderedBooks] = useState([]);
+  
+    const onAdd = (product) => {
+      const alreadyAdded = addedItems.find((item) => item.id === product.id);
+      let newItems = [];
+  
+      if (alreadyAdded) {
+        newItems = addedItems.filter((item) => item.id !== product.id);
+      } else {
+        newItems = [...addedItems, product];
+      }
+  
+      setAddedItems(newItems);
+    };
+  
+    const onBuy = () => {
+      setOrderedBooks(addedItems);
+      setAddedItems([]);
+    };
+  
+    useEffect(() => {
+      // Calculate total price
+      const totalPrice = addedItems.reduce((acc, item) => acc + item.price, 0);
+      console.log("Total Price:", totalPrice);
+    }, [addedItems]);
+  
+    useEffect(() => {
+      // Send chat message with ordered books
+      if (orderedBooks.length > 0) {
+        const orderedBooksMessage = orderedBooks.map((book) => `${book.title} by ${book.author}`).join(", ");
+        console.log("Ordered Books:", orderedBooksMessage);
+      }
+    }, [orderedBooks]);
+  
+    return (
+      <div className="ProductList">
+        <h2>Список товарів</h2>
+        <div className="ProductList-items">
+          {products.map((product) => (
+            <ProductItem
+              key={product.id}
+              product={product}
+              onAdd={onAdd}
+              added={!!addedItems.find((item) => item.id === product.id)}
+            />
+          ))}
+        </div>
+        <button className="BuyButton" onClick={onBuy}>
+          Придбати
+        </button>
+      </div>
+    );
+  };
+  
+  export default ProductList;
