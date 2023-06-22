@@ -37,7 +37,6 @@ function ProductItem  ({product, className,onAdd})  {
         '8': img8,
         '9': img9,
       };
-      //<Link to={`/product/${product.id}`} state={{ product }}>"{product.title}"</Link>
       const imgSrc = imageMap[product.id];
       const location = useLocation();
     return (
@@ -46,7 +45,7 @@ function ProductItem  ({product, className,onAdd})  {
                 <img src={imgSrc} alt={product.title} />
             </div>
             <div className={'title'}>"{product.title}"</div>
-            <div className={'author'}>by {product.author}</div>
+            <div className={'author'}>{product.author}</div>
             <div className={'price'}>
                 <span>Вартість: <b>{product.price} ₴</b></span>
             </div>
