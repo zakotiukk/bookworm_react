@@ -11,11 +11,12 @@
     font-weight: bold;
     margin-top: 10px;
     font-family: 'Open Sans', sans-serif;
+
   }
   
   .author {
     font-size: 18px;
-    font-family: 'Sacramento', cursive;
+    font-family: 'Open Sans', sans-serif;
     margin-top: 5px;
   }
   
@@ -64,9 +65,9 @@
 
   .rating {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
     margin-top: 10px;
+    align-items: center;
   }
   
   .star {
@@ -81,7 +82,7 @@
 
   .button-container {
     display: flex;
-    justify-content: flex-end; /* Align button to the right */
+    justify-content: flex-end; 
     width: 100%;
     margin-top: 10px;
   }
@@ -92,5 +93,5 @@
   
   .img img {
     max-width: 100%;
-    max-height: 400px; /* Adjust the maximum height as needed */
+    max-height: 400px; 
   }
