@@ -8,15 +8,17 @@
 }*/
 .product {
   border-width: 1px;
-  border-style: solid;
+  border-style:solid;
   border-color: var(--tg-theme-button-color);
   padding: 15px;
-  width: 170px;
+  width: 190px;
   margin:auto;
+  flex-direction:column;
 }
 
 .img {
     width: 100px;
+    height: 200px;
     margin: 0 auto;
     text-align: center;
   }
@@ -33,6 +35,7 @@
     background-color: rgb(38, 121, 38);
     color: #fff;
     font-size: 14px;
+    margin:auto;
 }
 
 .title {
@@ -41,5 +44,5 @@
 
 .details-link{
     text-align: right;
-    color: var(--tg-theme-button-text-color);
+    color: var(--tg-theme-text-color);
 }
