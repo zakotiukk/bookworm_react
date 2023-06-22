@@ -12,6 +12,7 @@
   border-color: var(--tg-theme-button-color);
   padding: 15px;
   width: 170px;
+  margin:auto;
 }
 
 .img {
