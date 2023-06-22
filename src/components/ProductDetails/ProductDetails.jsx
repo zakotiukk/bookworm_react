@@ -10,20 +10,30 @@ const ProductDetails = () => {
         onAdd(product);
     }
     const renderRating = () => {
-        const stars = [];
-        const rating = Math.round(product.rating); // Round the rating to the nearest integer
+      const stars = [];
     
-        for (let i = 1; i <= 5; i++) {
-          if (i <= rating) {
-            stars.push(<span key={i} className="star filled-star">☆</span>);
-          } else {
-            stars.push(<span key={i} className="star">☆</span>);
-          }
+      for (let i = 1; i <= 5; i++) {
+        if (i <= product.rating) {
+          stars.push(
+            <span key={i} className="star filled-star" onClick={() => handleRatingClick(i)}>
+              ☆
+            </span>
+          );
+        } else {
+          stars.push(
+            <span key={i} className="star" onClick={() => handleRatingClick(i)}>
+              ☆
+            </span>
+          );
         }
+      }
     
-        return stars;
-      };
-      //const imgSrc = imageMap[product.id];
+      return stars;
+    };
+    
+    const handleRatingClick = (rating) => {
+      // Handle rating click event if needed
+    };
     return (
         <div className={'product-details'}>
             <div className={'img'}>
@@ -41,8 +51,11 @@ const ProductDetails = () => {
             <div className={'year'}>Рік видання: {product.year}</div>
             </div>
             <div className="rating" data-rating={product.rating}>
-        {renderRating()}</div>
+  {renderRating()}
+</div>
+<div className="button-container">
         <Button title={"Додати в корзину"} type={"add"} onClick={onAddHandler} />
+       </div>
         </div>
     );
 };

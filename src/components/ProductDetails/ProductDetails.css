@@ -1,7 +1,7 @@
 .product-details {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
     margin: 20px;
   }
@@ -33,36 +33,6 @@
     
   }
  
-  
-  .rating {
-    unicode-bidi: bidi-override;
-    direction: rtl;
-    text-align: center;
-    height: 2em;
-    margin: 0 auto;
-    color: grey;
-  }
-  
-  .rating > span {
-    display: inline-block;
-    position: relative;
-    font-size: 1.75em;
-    margin-right: 0.2em;
-  }
-  
-  .rating > span:before {
-    content: "\2605";
-    position: absolute;
-    color: #8d2a06;
-  }
-  
-  .rating > span:not(:last-child):after {
-    content: "\2605";
-    position: absolute;
-    color: #8d2a06;
-    opacity: 0.3;
-  }
-
   .add-btn{
     background-color: rgb(38, 121, 38);
     /* width: 150px; */
@@ -90,4 +60,28 @@
     justify-content: space-between;
     width: 100%;
     font-size: 14px;
+  }
+
+  .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .star {
+    font-size: 24px;
+    color: grey;
+    cursor: pointer;
+  }
+  
+  .filled-star {
+    color: #f8ce0b;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    width: 100%;
+    margin-top: 10px;
   }
