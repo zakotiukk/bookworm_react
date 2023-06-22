@@ -61,7 +61,7 @@ const products = [
     year:"2008",
     publisher: "Penguin",
     format:"130x200 мм",
-    img: img3,
+    img: img4,
 },
     {id: '5', title: 'The Night They Vanished', price: 350,  author: 'Ванесса Севідж'},
     {id: '6', title: 'The hound of the baskervilles', price: 150, author:  'Артур Конан Дойл'},
