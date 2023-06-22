@@ -39,7 +39,7 @@ const ProductDetails = () => {
             <div className={'img'}>
                 <img src={product.img} />
             </div>
-            <div className={'title'}>"{product.title}"</div>
+            <div className={'det_title'}>"{product.title}"</div>
             <div className={'author'}>{product.author}</div>
             <div className={'description'}>{product.description}</div>
             <div className="format-pages-container">

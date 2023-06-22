@@ -37,11 +37,26 @@
     font-size: 14px;
 }
 
-.title {
-    text-align: center;
-}
 
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+
+}
 .details-link{
     text-align: right;
     color: var(--tg-theme-text-color);
+}
+
+.price {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.author {
+  font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 5px;
 }

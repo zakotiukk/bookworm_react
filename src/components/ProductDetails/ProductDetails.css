@@ -6,24 +6,10 @@
     margin: 20px;
   }
   
-  .title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-    font-family: 'Open Sans', sans-serif;
-
-  }
-  
-  .author {
-    font-size: 18px;
-    font-family: 'Open Sans', sans-serif;
-    margin-top: 5px;
-  }
-  
   .description {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    margin-top: 100px;
+    margin-top: 10px;
     text-align: justify;
   }
   
@@ -100,3 +86,11 @@
     justify-content:center;
   } 
   /*margin: 0 auto; */
+
+  .det_title{
+  margin-top:150px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  }
