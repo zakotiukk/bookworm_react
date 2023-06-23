@@ -38,6 +38,8 @@
     width: 150px;
     color: #fff;
     font-size: 14px;
+    justify-content:center;
+    
   }
   
   .btn:active {

@@ -50,12 +50,10 @@ const ProductDetails = () => {
             <div className={'publisher'}>Видавництво: {product.publisher}</div>
             <div className={'year'}>Рік видання: {product.year}</div>
             </div>
-            <div className="button-container">
-      <Button title="Додати в корзину" type="add" onClick={onAddHandler} />
-    </div>
-    <div className="rating" data-rating={product.rating}>
+            <div className="rating" data-rating={product.rating}>
       {renderRating()}
     </div>
+    <Button className="button_container" title="Додати в корзину" type="add" onClick={onAddHandler} />
         </div>
     );
 };

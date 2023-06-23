@@ -14,23 +14,18 @@
   }
   
   .pages {
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 5px;
     margin-left: auto;
     
   }
  
-  .add-btn{
+ /* .add-btn{
     background-color: rgb(38, 121, 38);
-    /* width: 150px; */
      color: #fff;
      font-size: 14px;
-  }
-  
-  /*.format{
-    margin-right: auto;
   }*/
-
+  
   .publisher-year-container {
     font-family: 'Open Sans', sans-serif;
     display: flex;
@@ -39,7 +34,6 @@
     font-size: 16px;
     
   }
-
   .format-pages-container {
     padding-top: 1em;
     font-family: 'Open Sans', sans-serif;
@@ -49,12 +43,9 @@
     font-size: 17px;
   }
 
-  .rating {
-    display: flex;
-    justify-content:flex-start;
-    margin-top: 10px;
-    align-items:flex-start;
-    text-align:left;
+  .rating{
+    margin-top: auto;
+    align-self: flex-end;
   }
   
   .star {
@@ -67,12 +58,14 @@
     color: #f8ce0b;
   }
 
-  .button-container {
+  .button_container {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
+    
   }
+ 
 
   .img {
     margin-bottom: 60px;
@@ -86,8 +79,6 @@
 
     justify-content:center;
   } 
-  /*margin: 0 auto; */
-
   .det_title{
     text-align: center;
   margin-top:160px;
