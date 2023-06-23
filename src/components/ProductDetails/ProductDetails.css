@@ -46,14 +46,15 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .rating {
     display: flex;
-    justify-content: flex-start;
+    justify-content:flex-start;
     margin-top: 10px;
-    align-items: center;
+    align-items:flex-start;
+    text-align:left;
   }
   
   .star {
