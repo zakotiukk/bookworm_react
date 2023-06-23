@@ -87,10 +87,13 @@ const Form = () => {
 
 export default Form;
 */
+
 import React, { useCallback, useEffect } from "react";
 import "./Form.css";
 import { useState } from "react";
 import { useTelegram } from "../../hooks/useTelegram";
+import Button from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [name, setName] = useState("");
@@ -101,6 +104,7 @@ const Form = () => {
   const [phoneNumber, setPhoneNumber] = useState("+380");
 
   const { tg } = useTelegram();
+  const navigate = useNavigate();
 
   const onSendData = useCallback(() => {
     const data = {
@@ -159,10 +163,13 @@ const Form = () => {
     setPhoneNumber(e.target.value);
   };
 
+  const navigateToProductList = () => {
+    navigate("/");
+  };
+
   return (
     <div className={"form "}>
       <h3 className="heading">Введіть Ваші дані</h3>
-      <br></br>
       <label className="label" htmlFor="name">Ім'я:</label>
       <input
         className={"input"}
@@ -228,3 +235,7 @@ const Form = () => {
 };
 
 export default Form;
+
+
+
+
