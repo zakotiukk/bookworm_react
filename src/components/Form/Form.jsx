@@ -71,11 +71,11 @@ const Form = () => {
     return (
         <div className={"form"}>
             <h3>Введіть Ваші дані</h3>
-            <input className={"input"} type="text" placeholder={"Ім'я"} value={name} onChange={onChangeName} />
-            <input className={"input"} type="text" placeholder={"Прізвище"} value={surname} onChange={onChangeSurname} />
-            <input className={"input"} type="text" placeholder={"Електронна пошта"} value={email} onChange={onChangeEmail} />
-            <input className={"input"} type="text" placeholder={"Телефон"} value={phoneNumber} onChange={onChangePhoneNumber} />
-            <input className={"input"} type="text" placeholder={"Місто"} value={city} onChange={onChangeCity}/>
+            <input className={"input"} type="text" placeholder={"введіть Ваше iм'я"} value={name} onChange={onChangeName} />
+            <input className={"input"} type="text" placeholder={введіть Ваше прізвище"} value={surname} onChange={onChangeSurname} />
+            <input className={"input"} type="text" placeholder={"введіть Вашу електронну пошту"} value={email} onChange={onChangeEmail} />
+            <input className={"input"} type="text" placeholder={"елефон"} value={phoneNumber} onChange={onChangePhoneNumber} />
+            <input className={"input"} type="text" placeholder={"введіть Ваше місто проживання"} value={city} onChange={onChangeCity}/>
             <select value={subject} onChange={onChangeSubject} className={"select"}>
                 <option value={"physical"}>Фізична особа</option>
                 <option value={"legal"}>Юридична особа</option>
@@ -162,57 +162,57 @@ const Form = () => {
   return (
     <div className={"form"}>
       <h3>Введіть Ваші дані</h3>
-      <label htmlFor="name">Ім'я:</label>
+      <label className="label" htmlFor="name">Ім'я:</label>
       <input
         className={"input"}
         id="name"
         type="text"
-        placeholder={"Ім'я"}
+        placeholder={"введіть Ваше ім'я"}
         value={name}
         onChange={onChangeName}
       />
-
-      <label htmlFor="surname">Прізвище:</label>
+  
+      <label className="label" htmlFor="surname">Прізвище:</label>
       <input
         className={"input"}
         id="surname"
         type="text"
-        placeholder={"Прізвище"}
+        placeholder={"введіть Ваше прізвище"}
         value={surname}
         onChange={onChangeSurname}
       />
-
-      <label htmlFor="email">Електронна пошта:</label>
+  
+      <label className="label" htmlFor="email">Електронна пошта:</label>
       <input
         className={"input"}
         id="email"
         type="text"
-        placeholder={"Електронна пошта"}
+        placeholder={"введіть Вашу електронна пошта"}
         value={email}
         onChange={onChangeEmail}
       />
-
-      <label htmlFor="phoneNumber">Телефон:</label>
+  
+      <label className="label" htmlFor="phoneNumber">Телефон:</label>
       <input
         className={"input"}
         id="phoneNumber"
         type="text"
-        placeholder={"Телефон"}
+        placeholder={"введіть Ваш номер телефону"}
         value={phoneNumber}
         onChange={onChangePhoneNumber}
       />
-
-      <label htmlFor="city">Місто:</label>
+  
+      <label className="label" htmlFor="city">Місто:</label>
       <input
         className={"input"}
         id="city"
         type="text"
-        placeholder={"Місто"}
+        placeholder={"введіть Ваше місто проживання"}
         value={city}
         onChange={onChangeCity}
       />
-
-      <label htmlFor="subject">Тип особи:</label>
+  
+      <label className="label" htmlFor="subject">Тип особи:</label>
       <select
         id="subject"
         value={subject}
