@@ -51,7 +51,7 @@ const products = [
     {id: '9', title: 'Solstice of Death', price: 290,  author:  'Лоуренс Анхолт'},
 ]
 
-/*const getTotalPrice =(items = []) =>{
+const getTotalPrice =(items = []) =>{
     return items.reduce((acc,item) => {
         return acc+=item.price
     },0)
@@ -69,15 +69,6 @@ const ProductList = () => {
         }
         
     }, [addedItems])
-
-    const onSendData = useCallback(() => {
-        const data = {
-          products: selectedProducts.map(product => product.title),
-          totalPrice: selectedProducts.reduce((total, product) => total + product.price, 0),
-          queryId,
-        };
-        tg.sendData(JSON.stringify(data));
-      }, [selectedProducts, queryId]);
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -121,73 +112,4 @@ const ProductList = () => {
     );
 };
 
-export default ProductList; */
-const ProductList = () => {
-    const [addedItems, setAddedItems] = useState([]);
-    const { tg } = useTelegram();
-  
-    const onSendData = useCallback(() => {
-      const bookTitles = addedItems.map(item => item.title).join("\n");
-      const totalPrice = getTotalPrice(addedItems);
-      const message = `Chosen Books:\n${bookTitles}\n\nTotal Price: ${totalPrice}`;
-  
-      tg.sendMessage(message)
-        .then(() => {
-          console.log("Message sent successfully");
-        })
-        .catch(error => {
-          console.log("Error sending message:", error);
-        });
-    }, [addedItems, tg]);
-  
-    const getTotalPrice = (items) => {
-      return items.reduce((acc, item) => {
-        return acc + item.price;
-      }, 0);
-    };
-  
-    const onAdd = (product) => {
-      const alreadyAdded = addedItems.find(item => item.id === product.id);
-      let newItems = [];
-  
-      if (alreadyAdded) {
-        newItems = addedItems.filter(item => item.id !== product.id);
-      } else {
-        newItems = [...addedItems, product];
-      }
-  
-      setAddedItems(newItems);
-  
-      if (newItems.length === 0) {
-        tg.MainButton.hide();
-      } else {
-        tg.MainButton.show();
-        tg.MainButton.setParams({
-          text: `Придбати ${getTotalPrice(newItems)}`,
-        });
-      }
-    };
-  
-    useEffect(() => {
-        tg.onEvent("mainButtonClicked", onSendData);
-    
-        return () => {
-          tg.offEvent("mainButtonClicked", onSendData);
-        };
-      }, [tg, onSendData]);
-  
-    return (
-      <div className="list">
-        {products.map(item => (
-          <ProductItem
-            key={item.id}
-            product={item}
-            onAdd={onAdd}
-            className="item"
-          />
-        ))}
-      </div>
-    );
-  };
-  
-  export default ProductList;
+export default ProductList; 
