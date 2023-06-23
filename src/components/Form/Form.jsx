@@ -132,12 +132,12 @@ const Form = () => {
   }, []);
 
   useEffect(() => {
-    if (!email || !name || !surname || !city) {
+    if (!phoneNumber || !name || !surname ) {
       tg.MainButton.hide();
     } else {
       tg.MainButton.show();
     }
-  }, [name, surname, email, city]);
+  }, [name, surname,  phoneNumber]);
 
   const onChangeName = (e) => {
     setName(e.target.value);

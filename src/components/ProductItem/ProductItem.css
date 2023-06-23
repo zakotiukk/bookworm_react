@@ -53,10 +53,11 @@
 
 .price {
   font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
 }
 
 .author {
-  font-size: 18px;
+  font-size: 17px;
     font-family: 'Open Sans', sans-serif;
     margin-top: 5px;
 }

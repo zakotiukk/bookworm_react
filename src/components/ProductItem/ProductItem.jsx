@@ -47,7 +47,7 @@ function ProductItem  ({product, className,onAdd})  {
             <div className={'title'}>"{product.title}"</div>
             <div className={'author'}>{product.author}</div>
             <div className={'price'}>
-                <span>Вартість: <b>{product.price} ₴</b></span>
+                <span >Вартість: <b>{product.price} ₴</b></span>
             </div>
             <Link to={`/product/${product.id}`} state={{ product }}>
         <div className={'details-link'}>Детальніше</div>
