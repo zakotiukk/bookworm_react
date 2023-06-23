@@ -162,12 +162,13 @@ const Form = () => {
   return (
     <div className={"form"}>
       <h3>Введіть Ваші дані</h3>
+      <br></br>
       <label className="label" htmlFor="name">Ім'я:</label>
       <input
         className={"input"}
         id="name"
         type="text"
-        placeholder={"введіть Ваше ім'я"}
+        placeholder={"введіть ім'я"}
         value={name}
         onChange={onChangeName}
       />
@@ -177,7 +178,7 @@ const Form = () => {
         className={"input"}
         id="surname"
         type="text"
-        placeholder={"введіть Ваше прізвище"}
+        placeholder={"введіть прізвище"}
         value={surname}
         onChange={onChangeSurname}
       />
@@ -187,7 +188,7 @@ const Form = () => {
         className={"input"}
         id="email"
         type="text"
-        placeholder={"введіть Вашу електронна пошта"}
+        placeholder={"введіть електронну пошту"}
         value={email}
         onChange={onChangeEmail}
       />
@@ -197,7 +198,7 @@ const Form = () => {
         className={"input"}
         id="phoneNumber"
         type="text"
-        placeholder={"введіть Ваш номер телефону"}
+        placeholder={"введіть номер телефону"}
         value={phoneNumber}
         onChange={onChangePhoneNumber}
       />
