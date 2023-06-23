@@ -124,19 +124,19 @@ const ProductList = () => {
 export default ProductList; */
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
-    const { tg } = useTelegram();
+    const { tg, sendMessage } = useTelegram();
   
     const onSendData = useCallback(() => {
       const bookTitles = addedItems.map(item => item.title).join("\n");
       const totalPrice = getTotalPrice(addedItems);
       const message = `Chosen Books:\n${bookTitles}\n\nTotal Price: ${totalPrice}`;
   
-      tg.sendMessage(message);
-    }, [addedItems, tg]);
+      sendMessage(message);
+    }, [addedItems, sendMessage]);
   
     const getTotalPrice = (items) => {
       return items.reduce((acc, item) => {
-        return acc += item.price;
+        return acc + item.price;
       }, 0);
     };
   
@@ -157,7 +157,7 @@ const ProductList = () => {
       } else {
         tg.MainButton.show();
         tg.MainButton.setParams({
-          text: `Придбати ${getTotalPrice(newItems)}`
+          text: `Придбати ${getTotalPrice(newItems)}`,
         });
       }
     };

@@ -34,11 +34,15 @@ export function useTelegram() {
     }
   };
 
+  const sendMessage = (message) => {
+    tg.sendMessage(message);
+  };
+
   return {
     onClose,
     onToggleButton,
     tg,
     user: tg.initDataUnsafe ? tg.initDataUnsafe.user : null,
+    sendMessage,
   };
 }
-
