@@ -5,6 +5,10 @@
     padding: 20px;
   }
   
+  .heading {
+    font-size: 20px;
+  }
+  
   .input {
     width: 100%;
     padding: 10px;

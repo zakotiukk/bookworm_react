@@ -160,8 +160,8 @@ const Form = () => {
   };
 
   return (
-    <div className={"form"}>
-      <h3>Введіть Ваші дані</h3>
+    <div className={"form "}>
+      <h3 className="heading">Введіть Ваші дані</h3>
       <br></br>
       <label className="label" htmlFor="name">Ім'я:</label>
       <input
