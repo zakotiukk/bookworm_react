@@ -124,15 +124,21 @@ const ProductList = () => {
 export default ProductList; */
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
-    const { tg, sendMessage } = useTelegram();
+    const { tg } = useTelegram();
   
     const onSendData = useCallback(() => {
       const bookTitles = addedItems.map(item => item.title).join("\n");
       const totalPrice = getTotalPrice(addedItems);
       const message = `Chosen Books:\n${bookTitles}\n\nTotal Price: ${totalPrice}`;
   
-      sendMessage(message);
-    }, [addedItems, sendMessage]);
+      tg.sendMessage(message)
+        .then(() => {
+          console.log("Message sent successfully");
+        })
+        .catch(error => {
+          console.log("Error sending message:", error);
+        });
+    }, [addedItems, tg]);
   
     const getTotalPrice = (items) => {
       return items.reduce((acc, item) => {
@@ -163,11 +169,12 @@ const ProductList = () => {
     };
   
     useEffect(() => {
-      tg.onEvent('mainButtonClicked', onSendData);
-      return () => {
-        tg.offEvent('mainButtonClicked', onSendData);
-      };
-    }, [onSendData, tg]);
+        tg.onEvent("mainButtonClicked", onSendData);
+    
+        return () => {
+          tg.offEvent("mainButtonClicked", onSendData);
+        };
+      }, [tg, onSendData]);
   
     return (
       <div className="list">
